@@ -1,5 +1,15 @@
 import Image from 'next/image'
 
+// Home page route
+// localhost:3000/
+
+// Can make this page client side rendering by using
+// 'use client' on top
+// use client side components for state management, using react hooks, stc
+
+// Data fetching, 3 types (SSR, SSG, ISR)
+
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">

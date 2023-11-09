@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 
+// Kinda like layout in handlebars
+// components for all routes, ex nav bar, footer, etc
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
