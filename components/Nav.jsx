@@ -7,17 +7,22 @@ import { signIn, signOut, useSession, getProviders} from 'next-auth/react'
 
 const Nav = () => {
 
-  const isUserLoggedIn = true;
+  // The useSession() hook is used to get current auth session 
+  // session object contins info about the authenticated user if their is one
+  const {data: session} = useSession();
 
   const [providers, setProviders] = useState(null)
 
+  // this hook is called when the server runs
+  // used to fetch authentication providers
+  // getProviders is provided by the NextAuth.js lib
   useEffect(() => {
-    const setProviders = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
       setProviders(response);
     }
 
-    setProviders();
+    setUpProviders();
   }, [])
 
   return (
@@ -33,7 +38,7 @@ const Nav = () => {
         <p className="logo_text">Promptopia</p>
       </Link>
       <div className="sm:flex hidden">
-        {isUserLoggedIn ? (
+        {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
               Create Post
@@ -46,7 +51,7 @@ const Nav = () => {
 
             <Link href="/profile">
               <Image
-                src="/assest/images/profile.svg"
+                src={session?.user.image}
                 width={37}
                 height={37}
                 className="rounded-full"
