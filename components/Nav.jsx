@@ -35,7 +35,7 @@ const Nav = () => {
           height={30}
           className="object-contain"
         />
-        <p className="logo_text">Promptopia</p>
+        <p className="logo_text">Promptmania</p>
       </Link>
       <div className="sm:flex hidden">
         {session?.user ? (
