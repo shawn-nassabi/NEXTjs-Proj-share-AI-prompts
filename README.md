@@ -1,6 +1,6 @@
 # Promptmania - AI Prompt Searching
 
-Note: This project is still in development. \
+Note: This project is still in development. 
 
 ## Screenshots:
 
